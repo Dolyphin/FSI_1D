@@ -34,4 +34,37 @@ vcor_n=vcor
 vcor_np1=vcor
 ###################################
 #the conncetivity table
-conec
+conec=np.ones((nnt-1,2))
+conec1=np.linspace(1,nnt-1,nnt-1)
+#print(conec1)
+conec2=np.linspace(2,nnt,nnt-1)
+#print(conec2)
+conec[:,0]=conec1
+conec[:,1]=conec2
+#print(conec)
+################################################
+#值不对需要修改
+number=np.zeros((nnt,1))
+for i in range(0,nnt-1,1):
+	number[i]=np.size(np.nonzero(conec==i))
+print(number)	
+#####################################################
+iopen1=0   #节点1在腔的左侧
+####################################################
+#physical properties of the flow
+gam=1.4 #特定的气体热比
+gamm1=gam-1
+R=287	#单独的气体常数
+C_v=R/gamm1 #特定的气体比热容
+
+pres_init0=1E5
+#print(pres_init0)
+temp_init0=300#初始温度
+rho_init0=pres_init0/gamm1/C_v/temp_init0 
+#
+#我们计算初始压强
+#我们设定外部压力
+if(iopen1==0):
+	
+
+
