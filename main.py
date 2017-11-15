@@ -42,14 +42,17 @@ Created on Thu Nov  9 10:45:22 2017
 # % -------------------------------
 # % clean the environment first
 import numpy as np
+import initialize_data_fluid
+import initialize_data_structure
+from temperature import *
 # clear all;
 # close all;
 # % -------------------------------
 # % Initialization of the raw data:
 # %
 # % fluid first, structure second.
-initialize_data_fluid()
-initialize_data_structure()
+initialize_data_fluid
+initialize_data_structure
 # %
 Tmax  = 0.5*T0  #% We set the maximum simulation time.
 # %                  T0, the natural period of the piston
@@ -105,7 +108,7 @@ print(1,'Fluid formulation (0=Eulerian, 1=Lagrangian, 2=ALE) = %g  \n',formulati
 # % vcor_np1 coordinates of discretization points at time station 'n+1'
 # % vcor_np  coordinates of discretization points at time station 'n'
 # % initially they are equal
-dxmin   = np.min(vcor_np1[1:nnt-1,1]-vcor_np1[0:nnt-2,1])
+dxmin   = np.min(vcor_np1[1:nnt-1,0]-vcor_np1[0:nnt-2,0])
 Delta_t = CFL*dxmin/np.max(np.abs(vsol[:,1]/vsol[:,0])+vcelerity)
 
 # %

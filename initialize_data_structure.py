@@ -6,6 +6,7 @@
 # % physical data of the structure
 # %===========================================================
 import numpy as np
+from initialize_data_fluid import *
 vprel=np.zeros((2,1))
 vprel[0] = 1e7  #% spring rigidity
 vprel[1]= 100  #% mass of the piston

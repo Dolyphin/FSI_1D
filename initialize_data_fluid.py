@@ -6,6 +6,8 @@ Created on Thu Nov  9 10:48:19 2017
 """
 ####
 import numpy as np
+from temperature import *
+from pressure import *
 ######
 nelt=70
 nnt=nelt+1
